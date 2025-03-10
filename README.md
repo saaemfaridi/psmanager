@@ -1,4 +1,4 @@
-# PSmanager Release 0.0.1
+# PSmanager Release 0.0.2
 This is a python package which helps managing passwords.
 
 ## Features

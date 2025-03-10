@@ -52,9 +52,3 @@ def checkPasswordStrength(password: str):
                 return "Moderate Password"
     else:
         return "Invalid Password"
-
-    
-if __name__ == "__main__":
-    password = "hel00@"
-    
-    print(checkPasswordStrength(password))

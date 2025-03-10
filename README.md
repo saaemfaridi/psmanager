@@ -1,9 +1,10 @@
-#  PSmanager Release 0.0.1
+# PSmanager Release 0.0.1
 This is a python package which helps managing passwords.
 
 ## Features
 * It can create random passwords using - **createPassword()**
 * It can do checks for the password's strength using - **checkPasswordStrength()**
+* It can save passwords securely using - **savePassword()**
 * More features will be added in future
 
 # Installation
@@ -19,9 +20,9 @@ for example :-
 ### Code
 ```
 import psmanager
-password = generatePassword() --> This returns a string
+password = psmanager.generatePassword()  # This returns a string
 
-print("Random Generated Password: ",password)
+print("Random Generated Password: ", password)
 ```
 ### Output
 ```
@@ -36,7 +37,7 @@ for example :-
 ```
 import psmanager
 password = psmanager.generatePassword()
-psmanager.savePassword()
+psmanager.savePassword(password)
 ```
 ### Output
 `On Console`
@@ -49,7 +50,7 @@ Generated Password: ryixtp44997@nv
 ```
 
 ### checkPasswordStrength()
-Runs a check for password's strength. This returns a tuple (bool, string - "Strong","Moderate" or "Weak")  
+Runs a check for password's strength. This returns a tuple (bool, string - "Strong", "Moderate" or "Weak")  
 
 for example :-
 #### 1)
@@ -57,9 +58,9 @@ for example :-
 ```
 import psmanager
 randomPassword = psmanager.generatePassword()
-passwordStrength = psmanager.checkPasswordStrength(password) --> This returns a tuple (bool, string)
+passwordStrength = psmanager.checkPasswordStrength(randomPassword)  # This returns a tuple (bool, string)
 
-print(passwordStrength[1]) --> We only need the string, so using index 1
+print(passwordStrength[1])  # We only need the string, so using index 1
 ```
 ### Output
 Lets assume that random password generated is `password@1xyz`
@@ -80,9 +81,9 @@ Weak
 ```
 import psmanager
 
-passwordStrength = psmanager.checkPasswordStrength("password here")  --> This returns a tuple (bool, string)
+passwordStrength = psmanager.checkPasswordStrength("password here")  # This returns a tuple (bool, string)
 
-if passwordStrength[0]:--> To get the bool -> True or False
+if passwordStrength[0]:  # To get the bool -> True or False
     print("pass")
 else:
     print("fail")

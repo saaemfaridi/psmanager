@@ -1,32 +1,60 @@
-def checkSpecialCharacters(password):
-    specialCharacter = ["~","`","!","@","#","$","%","^","&","*","_"]
-    for symbol in specialCharacter:
-        if symbol in str(password):
+def checkSpecialCharacters(password: str):
+    specialCharacter = ['`','~','!','@','#','$','%','^','&','*','(',')','_','-','+','=','{','[','}','}','|','\\',':',';','"','\'','<',',','>','.','?','/']
+    for char in specialCharacter:
+        if char in password:
             return True
+    return False
 
-strength = {
-    "strength": str()
-}
-def checkPasswordLength(password):
+def checkPasswordLength(password: str):
     length = len(password)
-    if (length >= 6 and length <= 16):
-        if length <= 8:
-            strength["strength"] = "Weak"
-        elif length <= 12:
-            strength["strength"] = "Moderate"
-        elif length <= 16:
-            strength["strength"] = "Strong"
-        return True
-    print("This password is too long to remember...")
-
-def checkNums(password):
-    numberList = ["1","2","3","4","5","6","7","8","9","0"]
-    for number in numberList:
-        if number in str(password):
-            return True
-
-def checkPasswordStrength(password):
-    if (checkSpecialCharacters(password) and checkPasswordLength(password) and checkNums(password)):
-        return True,f'{strength["strength"]}'
+    if 8 <= length <= 10:
+        return 1
+    elif 11 <= length <= 12:
+        return 2
+    elif 13 <= length <= 16:
+        return 3
     else:
-        return False,"Password must be 6 or more characters long, and must contain special symbols and numbers..."
+        return 0
+'''
+0 -> Invalid Password
+1 -> Weak Password
+2 -> Moderate Password
+3 -> Strong Password
+'''
+
+def checkNums(password: str):
+    for char in password:
+        if char.isdigit():
+            return True
+    return False
+        
+
+def checkPasswordStrength(password: str):
+    length_check = checkPasswordLength(password)
+    special_char = checkSpecialCharacters(password)
+    nums = checkNums(password)
+
+    if length_check != 0:
+        if length_check == 1:
+            if special_char and nums:
+                return "Weak Password"
+            else:
+                return "Very Weak Password"
+        elif length_check == 2:
+            if special_char and nums:
+                return "Moderate Password"
+            else:
+                return "Weak Password"
+        elif length_check == 3:
+            if special_char and nums:
+                return "Strong Password"
+            else:
+                return "Moderate Password"
+    else:
+        return "Invalid Password"
+
+    
+if __name__ == "__main__":
+    password = "hel00@"
+    
+    print(checkPasswordStrength(password))

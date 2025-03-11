@@ -1,10 +1,14 @@
 import random
 
 def generatePassword():
-    alphabets = ["a", "b", "c", "d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-    specialCharacter = ["~","`","!","@","#","$","%","^","&","*","_"]
+    lower = 'abcdefghijklmnopqrstuvwxyz'
+    upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    numbers = '1234567890'
+    symbols = '`~!@#$%^&*()_+=-{[]}\\|":;.,?/'
 
-    return f"{random.choice(alphabets)}{random.choice(alphabets)}{random.choice(alphabets)}{random.choice(alphabets)}{random.choice(alphabets)}{random.choice(alphabets)}{random.randint(0,9)}{random.randint(0,9)}{random.randint(0,9)}{random.randint(0,9)}{random.randint(0,9)}{random.choice(specialCharacter)}{random.choice(alphabets)}{random.choice(alphabets)}"
+    all = lower + upper + numbers + symbols
+    length = 16
+    return ''.join(random.sample(all, length))
 
 def savePassword(password):
     try:

@@ -1,6 +1,6 @@
 Metadata-Version: 2.2
 Name: psmanager
-Version: 0.0.2
+Version: 0.0.3
 Summary: A simple password manager for Python
 Home-page: https://github.com/saaemfairdi/psmanager/
 Author: Saaem Faridi
@@ -22,7 +22,7 @@ Dynamic: home-page
 Dynamic: license
 Dynamic: summary
 
-# PSmanager Release 0.0.1
+# PSmanager Release 0.0.3
 This is a python package which helps managing passwords.
 
 ## Features
@@ -30,6 +30,10 @@ This is a python package which helps managing passwords.
 * It can do checks for the password's strength using - **checkPasswordStrength()**
 * It can save passwords securely using - **savePassword()**
 * More features will be added in future
+
+# Update
+* Fixed Bugs in checkPasswordStrength()
+* Updated method used for generating strong passwords.
 
 # Installation
 Do ```pip install psmanager``` in your terminal to install the latest version of __**psmanager**__.

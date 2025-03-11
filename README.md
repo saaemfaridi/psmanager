@@ -1,4 +1,4 @@
-# PSmanager Release 0.0.2
+# PSmanager Release 0.0.3
 This is a python package which helps managing passwords.
 
 ## Features
@@ -6,6 +6,10 @@ This is a python package which helps managing passwords.
 * It can do checks for the password's strength using - **checkPasswordStrength()**
 * It can save passwords securely using - **savePassword()**
 * More features will be added in future
+
+# Update
+* Fixed Bugs in checkPasswordStrength()
+* Updated method used for generating strong passwords.
 
 # Installation
 Do ```pip install psmanager``` in your terminal to install the latest version of __**psmanager**__.

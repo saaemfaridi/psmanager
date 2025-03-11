@@ -4,6 +4,7 @@ setup.py
 psmanager/__init__.py
 psmanager/pchecker.py
 psmanager/pgenerator.py
+psmanager/try.py
 psmanager.egg-info/PKG-INFO
 psmanager.egg-info/SOURCES.txt
 psmanager.egg-info/dependency_links.txt

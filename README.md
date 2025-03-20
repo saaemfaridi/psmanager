@@ -1,5 +1,5 @@
 # PSmanager Release 0.0.3
-This is a python package which helps managing passwords.
+This is a python package which helps with creating, managing and saving passwords. Password Management made easy.
 
 ## Features
 * It can create random passwords using - **createPassword()**
